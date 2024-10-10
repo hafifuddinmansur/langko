@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DESAKU</title>
+    <link rel="stylesheet" href="asset/leaflet/leaflet.css" />
+    <script src="asset/leaflet/leaflet.js"></script>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script src="asset/langkoo.js"></script>
+    <script>
+      const map = L.map("map").setView(
+        [-8.718813682293233, 116.37103095351034],
+        15
+      );
+
+      const tiles = L.tileLayer(
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+          maxZoom: 19,
+          attribution:
+            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        }
+      ).addTo(map);
+      L.geoJSON(gis).addTo(map);
+      //menampilkan data masjid
+      var langkoo = L.marker([-8.719151523888787, 116.37103095351034]).addTo(
+        map
+      );
+      function onMapClick(e) {
+        alert("you clicked the maps at" + e.latling);
+      }
+      map.on("click,onMapClick");
+      //menampilkan sekolah
+      var langkoo = L.marker([-8.721528338147365, 116.36985733338446]).addTo(
+        map
+      );
+      function onMapClick(e) {
+        alert("you clicked the maps at" + e.latling);
+      }
+      map.on("click,onMapClick");
+      //menampilkan masjid
+      var langkoo = L.marker([-8.724604369309615, 116.37128591487557]).addTo(
+        map
+      );
+
+      map.on("click,onMapClick");
+      //menampilkan MI
+      var langkoo = L.marker([-8.717274193979003, 116.36887879761994]).addTo(
+        map
+      );
+
+      map.on("click,onMapClick");
+       //menampilkan smpn
+       var langkoo = L.marker([-8.710660067661447, 116.36372996475785]).addTo(
+        map
+      );
+      map.on("click,onMapClick");
+       //menampilkan sdn
+       var langkoo = L.marker([-8.710523409965038, 116.36449035242582]).addTo(
+        map
+      );
+      map.on("click,onMapClick");
+      //menampilkan pasar langko
+      var langkoo = L.marker([-8.73088853928637, 116.37599923231352]).addTo(
+        map
+      );
+      map.on("click,onMapClick");
+      //menampilkan masjid_lengarak
+      var langkoo = L.marker([-8.716411284429192, 116.36781151484114]).addTo(
+        map
+      );
+      map.on("click,onMapClick");
+    </script>
+    </script>
+  </body>
+</html>
